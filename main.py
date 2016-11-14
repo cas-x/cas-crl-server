@@ -1,6 +1,6 @@
 from flask import Flask
 from datetime import datetime
-from os.environ import get as env_get
+from os import environ
 
 from asn1crypto.util import timezone
 from oscrypto import asymmetric
@@ -9,7 +9,7 @@ from crlbuilder import CertificateListBuilder
 import pymysql
 from pymysql import cursors
 
-
+env_get = environ.get
 CAS_CRL_ENV = env_get('CAS_CRL_ENV', 'DEV')
 CAS_CRL_KEY = env_get('CAS_CRL_KEY')
 CAS_CRL_CRT = env_get('CAS_CRL_CRT')
@@ -28,7 +28,7 @@ certificate = asymmetric.load_certificate(CAS_CRL_CRT)
 @app.route("/crl")
 def crl():
     builder = CertificateListBuilder(
-        CAS_CRL_URL
+        CAS_CRL_URL,
         certificate,
         1000
     )

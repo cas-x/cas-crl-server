@@ -8,3 +8,4 @@ MarkupSafe==0.23
 oscrypto==0.17.2
 PyMySQL==0.7.9
 Werkzeug==0.11.11
+asn1crypto==0.18.5
