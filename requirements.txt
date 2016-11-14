@@ -1,0 +1,10 @@
+asn1crypto==0.18.5
+click==6.6
+crlbuilder==0.10.2
+Flask==0.11.1
+itsdangerous==0.24
+Jinja2==2.8
+MarkupSafe==0.23
+oscrypto==0.17.2
+PyMySQL==0.7.9
+Werkzeug==0.11.11
