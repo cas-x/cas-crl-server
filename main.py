@@ -49,7 +49,7 @@ def crl():
         certificate,
         1000
     )
-    builder.issuer_certificate_url = None
+    builder._issuing_distribution_point = None
 
     connection = pymysql.connect(host=CAS_CRL_MYSQL_HOST,
        port=CAS_CRL_MYSQL_PORT,
@@ -77,7 +77,7 @@ def crl():
     return send_file(strIO,
                      attachment_filename="cas.crl",
                      as_attachment=True)
-     
+
 if __name__ == "__main__":
     if CAS_CRL_ENV == 'DEV':
         app.run(debug=True)
