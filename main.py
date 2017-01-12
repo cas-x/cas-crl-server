@@ -33,6 +33,7 @@ def crl():
         certificate,
         1000
     )
+    builder.issuer_certificate_url = None
 
     # Connect to the database
     try:
